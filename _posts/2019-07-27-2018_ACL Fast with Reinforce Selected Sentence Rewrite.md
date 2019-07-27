@@ -5,7 +5,7 @@ subtitle: 'Fast Abstractive Summarization with Reinforce-Selected Sentence Rewri
 date: 2019-07-27
 categories: 文本摘要
 author: Dardis
-cover: '/assets/blog_img/2019-07-23-EM算法.assets/timg.jpeg'
+cover: '/assert/blog_img/2018 ACL Fast with Reinforce Selected Sentence Rewrite.assets/timg.jpg'
 tags: 文本摘要 论文解读
 ---
 
