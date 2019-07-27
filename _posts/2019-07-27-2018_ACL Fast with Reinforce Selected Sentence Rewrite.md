@@ -6,7 +6,7 @@ date: 2019-07-27
 categories: 文本摘要
 author: Dardis
 cover: '/assets/blog_img/2018_ACL_Fast_withReinforceSelectedSentenceRewrite.assets/timg.jpg'
-tags: 文本摘要 论文解读
+tags: 文本摘要 论文解读 NLP
 ---
 
 
