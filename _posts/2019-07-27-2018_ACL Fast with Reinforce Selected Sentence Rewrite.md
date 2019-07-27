@@ -5,7 +5,7 @@ subtitle: 'Fast Abstractive Summarization with Reinforce-Selected Sentence Rewri
 date: 2019-07-27
 categories: 文本摘要
 author: Dardis
-cover: '/assert/blog_img/2018 ACL Fast with Reinforce Selected Sentence Rewrite.assets/timg.jpg'
+cover: '/assert/blog_img/2018_ACL_Fast_withReinforceSelectedSentenceRewrite.assets/timg.jpg'
 tags: 文本摘要 论文解读
 ---
 
@@ -36,7 +36,7 @@ PDF地址：[https://arxiv.org/pdf/1805.11080.pdf](https://arxiv.org/pdf/1805.11
 
 论文模型如下图，大概看下结构就好，论文这个图感觉有点乱，请看下面描述：
 
-![extractor]({{ "/assert/blog_img/2018 ACL Fast with Reinforce Selected Sentence Rewrite.assets/1564126677273.png" | absolute_url}})
+![extractor]({{ "/assert/blog_img/2018_ACL_Fast_withReinforceSelectedSentenceRewrite.assets/1564126677273.png" | absolute_url}})
 
 #### 2.1.1 生成句子语义表述
 
@@ -116,4 +116,4 @@ $$
 
 ## 4 结果
 
-![score]({{ "/assert/blog_img/2018 ACL Fast with Reinforce Selected Sentence Rewrite.assets/1564132097380.png" | absolute_url }})
+![score]({{ "/assert/blog_img/2018_ACL_Fast_withReinforceSelectedSentenceRewrite.assets/1564132097380.png" | absolute_url }})
