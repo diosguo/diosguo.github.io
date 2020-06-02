@@ -3,8 +3,7 @@ import time
 import re
 import shutil
 
-post_header = """
----
+post_header = """---
 layout: post
 title: '{}'
 subtitle: '{}'
