@@ -53,7 +53,7 @@ def replace_image_path_in_line(line:str) -> str:
         return line
 
 def convert_one_document(md_path:str):
-    filename = os.path.split(md_path)[-1][:-2]
+    filename = os.path.split(md_path)[-1][:-3]
     time_str = get_document_time_str(md_path)
     converted_filename = '{}-{}.md'.format(time_str, filename)
     print(converted_filename)
