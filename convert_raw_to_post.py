@@ -2,7 +2,7 @@ import os
 import time 
 import re
 import shutil
-
+from urllib import parse
 post_header = """---
 layout: post
 title: '{}'
@@ -25,17 +25,22 @@ def get_document_time_str(md_path) -> str:
 
 def copy_image_file(source_path, target_path):
     target_path = '.'+target_path
+    target_path = parse.unquote(target_path)
     path = os.path.split(target_path)[0]
+    path = parse.unquote(path)
     if not os.path.exists(path):
         print(path)
         print(target_path)
         os.makedirs(path)
+    source_path = parse.unquote(source_path)
+    print(source_path, target_path)
     shutil.copyfile(os.path.join(base_dir,source_path), target_path)
 
 
 def get_image_path(image_path):
     image_path = re.findall(r'!\[.*?\]\((.*?)\)$', image_path.strip())[0]
     new_filename = '/assets/blog_img/{}'.format(image_path)
+    new_filename = parse.unquote(new_filename)
     return image_path, new_filename
 
 
@@ -44,6 +49,7 @@ def replace_image_path_in_line(line:str) -> str:
     if image_path:
         # exist image
         image_path = image_path[0]
+        # image_path = parse.unquote(image_path)
         old_image, new_image = get_image_path(line)
         copy_image_file(old_image, new_image)
         # {{"/assets/blog_img/2019-07-23-EM算法.assets/20170521183913_G2ZRf.jpeg" | absolute_url}}){:height="200"}
@@ -53,11 +59,13 @@ def replace_image_path_in_line(line:str) -> str:
         return line
 
 def convert_one_document(md_path:str):
+    global base_dir 
+    base_dir = os.path.dirname(md_path)
     filename = os.path.split(md_path)[-1][:-3]
     time_str = get_document_time_str(md_path)
     converted_filename = '{}-{}.md'.format(time_str, filename)
     print(converted_filename)
-
+    
     tags = ['subtitle','categories','cover','tags']    
     tags_data = {}
     tag_mode = 4
@@ -90,8 +98,8 @@ def convert_one_document(md_path:str):
 
 
 def main():
-    filepath = './raw_documents/一点思考.md'
-    
+    filepath = './raw_documents/2021/标注工具brat安装和配置.md'
+    print(filepath)
     convert_one_document(filepath)
 
 
